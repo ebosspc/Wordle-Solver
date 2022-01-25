@@ -11,6 +11,3 @@ def print_instructions():
         print("If the character doesn't exist in the word by showing up grey in wordle please type the letter g in the terminal with its corresponding letter.")
         print("If the character exists in the word by showing up as yellow in wordle please type the letter y in the terminal with its coresponding letter.")
         print("If the character exists in the word and is in the right place by showing up as green in wordle, please type the letters gr with its corresponding letter.")
-    
-    # Print the first necessary instruction for the user to follow
-    print("\nPlease enter the word adieu as you first word and enter the corresponding data for each letter.")

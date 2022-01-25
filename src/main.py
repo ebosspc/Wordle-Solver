@@ -23,34 +23,102 @@ from word_list_generation import five_letter_words_list
 welcome.print_instructions()
 
 #####-Functions-#####
-# Define a function to remove possible words after the first guess
+# Define a function to remove impossible words after the first guess
 def remove_first_guess_words():
     # Get the first word's data and import it into this module
     word_processing.get_first_word_data()
     word_processing.process_first_word_data()
+    global five_letter_words_list,possible_char_1_list,possible_char_2_list,possible_char_3_list,possible_char_4_list,possible_char_5_list
     from word_processing import possible_char_1_list
     from word_processing import possible_char_2_list
     from word_processing import possible_char_3_list
     from word_processing import possible_char_4_list
     from word_processing import possible_char_5_list
-
+    
+    print(possible_char_1_list)
     # Remove eliminated words from the possible words list
     for word in five_letter_words_list:
         if word[0] not in possible_char_1_list:
-                five_letter_words_list.remove(word)
+            five_letter_words_list.remove(word)
     for word in five_letter_words_list:
         if word[1] not in possible_char_2_list:
-                five_letter_words_list.remove(word)
+            five_letter_words_list.remove(word)
     for word in five_letter_words_list:
         if word[2] not in possible_char_3_list:
-                five_letter_words_list.remove(word)
+            five_letter_words_list.remove(word)
     for word in five_letter_words_list:
         if word[3] not in possible_char_4_list:
-                five_letter_words_list.remove(word)
+            five_letter_words_list.remove(word)
     for word in five_letter_words_list:
         if word[4] not in possible_char_5_list:
-                five_letter_words_list.remove(word)
+            five_letter_words_list.remove(word)
+    
 
-# Remove eliminated words from the possible words list after the first guess
+# Define a function to remove impossible words after the second guess 
+def remove_second_guess_words():
+    # Get the second word's data and import it into this module
+    word_processing.get_second_word_data()
+    word_processing.process_second_word_data()
+    global five_letter_words_list
+    from word_processing import possible_char_1_list
+    from word_processing import possible_char_2_list
+    from word_processing import possible_char_3_list
+    from word_processing import possible_char_4_list
+    from word_processing import possible_char_5_list
+    print(possible_char_1_list)
+    # Remove eliminated words from the possible words list
+    for word in five_letter_words_list:
+        if word[0] not in possible_char_1_list:
+            five_letter_words_list.remove(word)
+    for word in five_letter_words_list:
+        if word[1] not in possible_char_2_list:
+            five_letter_words_list.remove(word)
+    for word in five_letter_words_list:
+        if word[2] not in possible_char_3_list:
+            five_letter_words_list.remove(word)
+    for word in five_letter_words_list:
+        if word[3] not in possible_char_4_list:
+            five_letter_words_list.remove(word)
+    for word in five_letter_words_list:
+        if word[4] not in possible_char_5_list:
+            five_letter_words_list.remove(word)
+
+
+# Define a function to remvoed words that should have been removed but didn't
+def remove_unremoved_words():
+    '''
+    This function just does what is already done in other functions
+    over and over again because python isn't 100% accurate with lists.
+    Why does this happen? I have no idea. 
+    I just found that by continuously running the code segment, 
+    Python is able to catch all of the words it missed.
+    '''
+    global five_letter_words_list
+    for i in range(20):
+        for word in five_letter_words_list:
+            if word[0] not in possible_char_1_list:
+                    five_letter_words_list.remove(word)
+        for word in five_letter_words_list:
+            if word[1] not in possible_char_2_list:
+                    five_letter_words_list.remove(word)
+        for word in five_letter_words_list:
+            if word[2] not in possible_char_3_list:
+                    five_letter_words_list.remove(word)
+        for word in five_letter_words_list:
+            if word[3] not in possible_char_4_list:
+                    five_letter_words_list.remove(word)
+        for word in five_letter_words_list:
+            if word[4] not in possible_char_5_list:
+                    five_letter_words_list.remove(word)
+
+
+#####-Processing-#####
+# Remove eliminated words from the possible words list after the first 2 guesses using preset words
 remove_first_guess_words()
-print(len(five_letter_words_list))
+remove_second_guess_words()
+
+# Remove any remainign words the algorithm may have missed
+remove_unremoved_words()
+
+
+print(five_letter_words_list)
