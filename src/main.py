@@ -24,5 +24,8 @@ from word_list_generation import five_letter_words_list
 welcome.print_instructions()
 
 # Get the first word's data and import it into this module
+from word_list_generation import five_letter_words_list
 word_processing.get_first_word_data()
 word_processing.process_first_word_data()
+from word_processing import five_letter_words_list
+print(len(five_letter_words_list))
