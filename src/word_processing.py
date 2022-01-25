@@ -1,4 +1,4 @@
-import main
+
 # Define a function to collect the corresponding data for the first word entered
 def get_first_word_data():
     # Globalize data variables that will be used in other modules
@@ -39,8 +39,11 @@ def get_first_word_data():
         if word_1_char_5_data == 'g' or word_1_char_5_data == 'y' or word_1_char_5_data == 'gr':
             continue_with_loop = 1
 
-# Define a fucntion to process the received first word data
+
 def process_first_word_data():
+    # Out put a mesage to the user that their data is being processed
+    print("processing...")
+    
     # Create globalized lists that contain the possible letters a specific character in the word can be
     global possible_char_1_list,possible_char_2_list,possible_char_3_list,possible_char_4_list,possible_char_5_list
     possible_char_1_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m'
@@ -118,21 +121,3 @@ def process_first_word_data():
     if word_1_char_5_data == 'gr':
         possible_char_5_list.clear()
         possible_char_5_list.append('u')
-    
-    # Remove words based on the new possibilites for character placement
-    from main import five_letter_words_list
-    for word in five_letter_words_list:
-        if word[0] not in possible_char_1_list:
-            five_letter_words_list.remove(word)
-    for word in five_letter_words_list:
-        if word[1] not in possible_char_2_list:
-            five_letter_words_list.remove(word)
-    for word in five_letter_words_list:
-        if word[2] not in possible_char_3_list:
-            five_letter_words_list.remove(word)
-    for word in five_letter_words_list:
-        if word[3] not in possible_char_4_list:
-            five_letter_words_list.remove(word)
-    for word in five_letter_words_list:
-        if word[4] not in possible_char_5_list:
-            five_letter_words_list.remove(word)
