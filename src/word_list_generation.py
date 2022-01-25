@@ -15,11 +15,11 @@ def generate_words_list():
 # Define a function to generate a list of 5 letter words
 def get_5_letter_words():
     # Creat e list of five letter words
-    global five_letter_word_list
-    five_letter_word_list = []
+    global five_letter_words_list
+    five_letter_words_list = []
 
     # Add 5 letter words from the master words list to the 5 letter word list
     generate_words_list()
     for word in master_words_list:
         if len(word) == 5:
-            five_letter_word_list.append(word)
+            five_letter_words_list.append(word)
