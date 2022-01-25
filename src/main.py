@@ -25,8 +25,4 @@ welcome.print_instructions()
 
 # Get the first word's data and import it into this module
 word_processing.get_first_word_data()
-from word_processing import word_1_char_1_data
-from word_processing import word_1_char_2_data
-from word_processing import word_1_char_3_data
-from word_processing import word_1_char_4_data
-from word_processing import word_1_char_5_data
+word_processing.process_first_word_data()
