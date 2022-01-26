@@ -36,6 +36,7 @@ for word in five_letter_words_list:
 if best_word[1] > 0:
     best_word = best_word[0]
 else:
+    print("No more unused characters, random word from possible words chosen.")
     best_word = rand.choice(five_letter_words_list)
 
 print(best_word)
