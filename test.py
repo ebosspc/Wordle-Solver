@@ -1,6 +1,5 @@
 import random as rand
 
-
 word1 = ['a','d','i','e','u'] # score = 0
 word2 = ['s','c','o','o','p'] # score = 1
 word3 = ['b','e','a','s','t'] # score = 2
@@ -17,19 +16,20 @@ current_score = 0
 
 # Sort each word based on how many characters it has in that haven't been guess yet
 for word in five_letter_words_list:
-    if word[0] in five_letter_words_list:
+    if word[0] in unguessed_letters_list:
         current_score += 1
-    if word[1] in five_letter_words_list:
+    if word[1] in unguessed_letters_list:
         current_score += 1
-    if word[2] in five_letter_words_list:
+    if word[2] in unguessed_letters_list:
         current_score += 1
-    if word[3] in five_letter_words_list:
+    if word[3] in unguessed_letters_list:
         current_score += 1
-    if word[4] in five_letter_words_list:
+    if word[4] in unguessed_letters_list:
         current_score += 1
     if current_score > best_word[1]:
-        best_word[0] = word
-        best_word[1] = current_score
+        best_word.clear()
+        best_word.append(word)
+        best_word.append(current_score)
     current_score = 0
 
 # Extract the best word from the sorting algorithm
