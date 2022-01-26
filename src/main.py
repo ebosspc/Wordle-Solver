@@ -35,7 +35,6 @@ def remove_first_guess_words():
     from word_processing import possible_char_4_list
     from word_processing import possible_char_5_list
     
-    print(possible_char_1_list)
     # Remove eliminated words from the possible words list
     for word in five_letter_words_list:
         if word[0] not in possible_char_1_list:
@@ -65,7 +64,6 @@ def remove_second_guess_words():
     from word_processing import possible_char_3_list
     from word_processing import possible_char_4_list
     from word_processing import possible_char_5_list
-    print(possible_char_1_list)
     # Remove eliminated words from the possible words list
     for word in five_letter_words_list:
         if word[0] not in possible_char_1_list:
@@ -88,7 +86,7 @@ def remove_second_guess_words():
 def remove_unremoved_words():
     '''
     This function just does what is already done in other functions
-    over and over again because python isn't 100% accurate with lists.
+    over and over again because python isn't 100% accurate with scanning lists.
     Why does this happen? I have no idea. 
     I just found that by continuously running the code segment, 
     Python is able to catch all of the words it missed.
@@ -115,10 +113,13 @@ def remove_unremoved_words():
 #####-Processing-#####
 # Remove eliminated words from the possible words list after the first 2 guesses using preset words
 remove_first_guess_words()
+print(len(five_letter_words_list))
 remove_second_guess_words()
+print(len(five_letter_words_list))
 
-# Remove any remainign words the algorithm may have missed
+# Remove any remaining words the algorithm may have missed
 remove_unremoved_words()
 
 
+print(len(five_letter_words_list))
 print(five_letter_words_list)
