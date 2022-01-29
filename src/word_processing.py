@@ -182,26 +182,38 @@ def process_second_word_data():
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_2_char_1_data == 'g':
-        possible_char_1_list.remove('c')
-        possible_char_2_list.remove('c')
-        possible_char_3_list.remove('c')
-        possible_char_4_list.remove('c')
-        possible_char_5_list.remove('c')
+        if 'c' in possible_char_1_list:
+            possible_char_1_list.remove('c')
+        if 'c' in possible_char_2_list:
+            possible_char_2_list.remove('c')
+        if 'c' in possible_char_3_list:
+            possible_char_3_list.remove('c')
+        if 'c' in possible_char_4_list:
+            possible_char_4_list.remove('c')
+        if 'c' in possible_char_5_list:
+            possible_char_5_list.remove('c')
     if word_2_char_1_data == 'y':
-        possible_char_1_list.remove('c')
+        if 'c' in possible_char_1_list:
+            possible_char_1_list.remove('c')
     if word_2_char_1_data == 'gr':
         possible_char_1_list.clear()
         possible_char_1_list.append('c')
     
     # Eliminate letter possibilites based on the user's inputted data
     if word_2_char_2_data == 'g':
-        possible_char_1_list.remove('l')
-        possible_char_2_list.remove('l')
-        possible_char_3_list.remove('l')
-        possible_char_4_list.remove('l')
-        possible_char_5_list.remove('l')
+        if 'l' in possible_char_1_list:
+            possible_char_1_list.remove('l')
+        if 'l' in possible_char_2_list:
+            possible_char_2_list.remove('l')
+        if 'l' in possible_char_3_list:
+            possible_char_3_list.remove('l')
+        if 'l' in possible_char_4_list:
+            possible_char_4_list.remove('l')
+        if 'l' in possible_char_5_list:
+            possible_char_5_list.remove('l')
     if word_2_char_2_data == 'y':
-        possible_char_2_list.remove('l')
+        if 'l' in possible_char_2_list:
+            possible_char_2_list.remove('l')
     if word_2_char_2_data == 'gr':
         possible_char_2_list.clear()
         possible_char_2_list.append('l')
