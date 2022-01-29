@@ -39,5 +39,9 @@ else:
     print("No more unused characters, random word from possible words chosen.")
     best_word = rand.choice(five_letter_words_list)
 
-print(best_word)
-    
+# Split up the best word into 5 variables, each containing one of its characters
+best_word_char_1 = best_word[0]
+best_word_char_2 = best_word[1]
+best_word_char_3 = best_word[2]
+best_word_char_4 = best_word[3]
+best_word_char_5 = best_word[4]

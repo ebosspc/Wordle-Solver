@@ -1,6 +1,5 @@
 #####-Imports-#####
 # Import the math library for mathematical functions
-from word_list_generation import five_letter_words_list
 import math as math
 
 # Import random library for random number generation
@@ -18,14 +17,13 @@ import word_processing as word_processing
 #####-Setup-#####
 # Generate a list of all 5 letter words in English and import it
 word_list_generation.get_5_letter_words()
+from word_list_generation import five_letter_words_list
 
 # Welcome the user to the script
 welcome.print_instructions()
 
 #####-Functions-#####
 # Define a function to remove impossible words after the first guess
-
-
 def remove_first_guess_words():
     # Get the first word's data and import it into this module
     word_processing.get_first_word_data()
