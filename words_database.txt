@@ -232690,7 +232690,6 @@ pfund
 pfunde
 pfx
 pg
-pgntt
 pgnttrp
 ph
 phaca
@@ -235472,7 +235471,6 @@ photphotonegative
 phots
 photuria
 phousdar
-phpht
 phr
 phractamphibia
 phragma

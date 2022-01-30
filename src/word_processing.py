@@ -220,81 +220,57 @@ def process_second_word_data():
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_2_char_3_data == 'g':
-        possible_char_1_list.remove('o')
-        possible_char_2_list.remove('o')
-        possible_char_3_list.remove('o')
-        possible_char_4_list.remove('o')
-        possible_char_5_list.remove('o')
+        if 'o' in possible_char_1_list:
+            possible_char_1_list.remove('o')
+        if 'o' in possible_char_2_list:
+            possible_char_2_list.remove('o')
+        if 'o' in possible_char_3_list:
+            possible_char_3_list.remove('o')
+        if 'o' in possible_char_4_list:
+            possible_char_4_list.remove('o')
+        if 'o' in possible_char_5_list:
+            possible_char_5_list.remove('o')
     if word_2_char_3_data == 'y':
-        possible_char_3_list.remove('o')
+        if 'o' in possible_char_3_list:
+            possible_char_3_list.remove('o')
     if word_2_char_3_data == 'gr':
         possible_char_3_list.clear()
         possible_char_3_list.append('o')
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_2_char_4_data == 'g':
-        possible_char_1_list.remove('y')
-        possible_char_2_list.remove('y')
-        possible_char_3_list.remove('y')
-        possible_char_4_list.remove('y')
-        possible_char_5_list.remove('y')
+        if 'y' in possible_char_1_list:
+            possible_char_1_list.remove('y')
+        if 'y' in possible_char_2_list:
+            possible_char_2_list.remove('y')
+        if 'y' in possible_char_3_list:
+            possible_char_3_list.remove('y')
+        if 'y' in possible_char_4_list:
+            possible_char_4_list.remove('y')
+        if 'y' in possible_char_5_list:
+            possible_char_5_list.remove('y')
     if word_2_char_4_data == 'y':
-        possible_char_4_list.remove('y')
+        if 'y' in possible_char_4_list:
+            possible_char_4_list.remove('y')
     if word_2_char_4_data == 'gr':
         possible_char_4_list.clear()
         possible_char_4_list.append('y')
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_2_char_5_data == 'g':
-        possible_char_1_list.remove('s')
-        possible_char_2_list.remove('s')
-        possible_char_3_list.remove('s')
-        possible_char_4_list.remove('s')
-        possible_char_5_list.remove('s')
+        if 's' in possible_char_1_list:
+            possible_char_1_list.remove('s')
+        if 's' in possible_char_2_list:
+            possible_char_2_list.remove('s')
+        if 's' in possible_char_3_list:
+            possible_char_3_list.remove('s')
+        if 's' in possible_char_4_list:
+            possible_char_4_list.remove('s')
+        if 's' in possible_char_5_list:
+            possible_char_5_list.remove('s')
     if word_2_char_5_data == 'y':
-        possible_char_5_list.remove('s')
+        if 's' in possible_char_5_list:
+            possible_char_5_list.remove('s')
     if word_2_char_5_data == 'gr':
         possible_char_5_list.clear()
         possible_char_5_list.append('s')
-
-
-# Define a function to determine the best thrid word that the user shoudl guess
-def grab_third_word():
-    global unguessed_letters_list,best_word_char_1,best_word_char_2,best_word_char_3,best_word_char_4,best_word_char_5
-    unguessed_letters_list = ['b','f','g','h','j','k','m','n','p','q','r','t','v','w','x','y','z']
-
-    # Define variables to track word sorting
-    best_word = ['',0]
-    current_score = 0
-
-    # Sort each word based on how many characters it has in that haven't been guess yet
-    for word in five_letter_words_list:
-        if word[0] in unguessed_letters_list:
-            current_score += 1
-        if word[1] in unguessed_letters_list:
-            current_score += 1
-        if word[2] in unguessed_letters_list:
-            current_score += 1
-        if word[3] in unguessed_letters_list:
-            current_score += 1
-        if word[4] in unguessed_letters_list:
-            current_score += 1
-        if current_score > best_word[1]:
-            best_word.clear()
-            best_word.append(word)
-            best_word.append(current_score)
-        current_score = 0
-
-    # Extract the best word from the sorting algorithm
-    if best_word[1] > 0:
-        best_word = best_word[0]
-    else:
-        print("No more unused characters, random word from possible words chosen.")
-        best_word = rand.choice(five_letter_words_list)
-
-    # Split up the best word into 5 variables, each containing one of its characters
-    best_word_char_1 = best_word[0]
-    best_word_char_2 = best_word[1]
-    best_word_char_3 = best_word[2]
-    best_word_char_4 = best_word[3]
-    best_word_char_5 = best_word[4]
