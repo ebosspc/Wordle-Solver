@@ -149,13 +149,22 @@ def grab_third_word():
         else:
             best_word = rand.choice(five_letter_words_list)
 
-    if len(five_letter_words_list) != 0:
-        # Split up the best word into 5 variables, each containing one of its characters
-        best_word_char_1 = best_word[0]
-        best_word_char_2 = best_word[1]
-        best_word_char_3 = best_word[2]
-        best_word_char_4 = best_word[3]
-        best_word_char_5 = best_word[4]
+    # Split up the best word into 5 variables, each containing one of its characters
+    best_word_char_1 = best_word[0]
+    if best_word_char_1 in unguessed_letters_list:
+        unguessed_letters_list.remove(best_word_char_1)
+    best_word_char_2 = best_word[1]
+    if best_word_char_2 in unguessed_letters_list:
+        unguessed_letters_list.remove(best_word_char_2)
+    best_word_char_3 = best_word[2]
+    if best_word_char_3 in unguessed_letters_list:
+        unguessed_letters_list.remove(best_word_char_3)
+    best_word_char_4 = best_word[3]
+    if best_word_char_4 in unguessed_letters_list:
+        unguessed_letters_list.remove(best_word_char_4)
+    best_word_char_5 = best_word[4]
+    if best_word_char_5 in unguessed_letters_list:
+        unguessed_letters_list.remove(best_word_char_5)  
 
 
 # Defune a function to remove impossible words after the third guess
