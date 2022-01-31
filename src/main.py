@@ -403,33 +403,23 @@ def remove_fourth_guess_words():
     print("Enter the word", best_word_char_1+best_word_char_2+best_word_char_3+best_word_char_4+best_word_char_5, "as  your fourth guess.")
     print("\nPlease enter the corresponding data for each letter below:")
 
-    # Get the resulting data of the first word's first character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+    # Get the resulting data of the first word's characters and don't let users enter bad inputs
+    while True:
         word_4_char_1_data = str(input(best_word_char_1 + ": "))
         if word_4_char_1_data == 'g' or word_4_char_1_data == 'y' or word_4_char_1_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's second character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_4_char_2_data = str(input(best_word_char_2 + ": "))
         if word_4_char_2_data == 'g' or word_4_char_2_data == 'y' or word_4_char_2_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's third character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_4_char_3_data = str(input(best_word_char_3 + ": "))
         if word_4_char_3_data == 'g' or word_4_char_3_data == 'y' or word_4_char_3_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's fourth character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_4_char_4_data = str(input(best_word_char_4 + ": "))
         if word_4_char_4_data == 'g' or word_4_char_4_data == 'y' or word_4_char_4_data == 'gr':
-            continue_with_loop = 1
+            break
 
     # Get the resulting data of the first word's fifth character and don't let users enter bad inputs
     continue_with_loop = 0
