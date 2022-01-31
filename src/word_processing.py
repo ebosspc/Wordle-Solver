@@ -60,6 +60,10 @@ def process_first_word_data():
                             ,'n','o','p','q','r','s','t','u','v','w','x','y','z']
     possible_char_5_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m'
                             ,'n','o','p','q','r','s','t','u','v','w','x','y','z']
+    
+    # Create a list of letters that are known to be in the word
+    global known_letters_list
+    known_letters_list =[]
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_1_char_1_data == 'g':
@@ -76,6 +80,8 @@ def process_first_word_data():
     if word_1_char_1_data == 'y':
         if 'a' in possible_char_1_list:
             possible_char_1_list.remove('a')
+        if 'a' not in known_letters_list:
+            known_letters_list.append('a')
     if word_1_char_1_data == 'gr':
         possible_char_1_list.clear()
         possible_char_1_list.append('a')
@@ -95,6 +101,8 @@ def process_first_word_data():
     if word_1_char_2_data == 'y':
         if 'd' in possible_char_2_list:
             possible_char_2_list.remove('d')
+        if 'd' not in known_letters_list:
+            known_letters_list.append('d')
     if word_1_char_2_data == 'gr':
         possible_char_2_list.clear()
         possible_char_2_list.append('d')
@@ -114,6 +122,8 @@ def process_first_word_data():
     if word_1_char_3_data == 'y':
         if 'i' in possible_char_3_list:
             possible_char_3_list.remove('i')
+        if 'i' not in known_letters_list:
+            known_letters_list.append('i')
     if word_1_char_3_data == 'gr':
         possible_char_3_list.clear()
         possible_char_3_list.append('i')
@@ -133,6 +143,8 @@ def process_first_word_data():
     if word_1_char_4_data == 'y':
         if 'e' in possible_char_4_list:
             possible_char_4_list.remove('e')
+        if 'e' not in known_letters_list:
+            known_letters_list.append('e')
     if word_1_char_4_data == 'gr':
         possible_char_4_list.clear()
         possible_char_4_list.append('e')
@@ -152,6 +164,8 @@ def process_first_word_data():
     if word_1_char_5_data == 'y':
         if 'u' in possible_char_5_list:
             possible_char_5_list.remove('u')
+        if 'u' not in known_letters_list:
+            known_letters_list.append('u')
     if word_1_char_5_data == 'gr':
         possible_char_5_list.clear()
         possible_char_5_list.append('u')
