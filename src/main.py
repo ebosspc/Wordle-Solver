@@ -317,6 +317,63 @@ def remove_third_guess_words():
         possible_char_5_list.append(best_word_char_5)
     remove_unremoved_words()
 
+
+# Define a function to determine the best fourth word that the user should guess
+def grab_fourth_word():
+    global unguessed_letters_list,best_word_char_1,best_word_char_2,best_word_char_3,best_word_char_4,best_word_char_5
+
+    # Define variables to track word sorting
+    best_word = ['',0]
+    current_score = 0
+
+    # Sort each word based on how many characters it has in that haven't been guess yet
+    for word in five_letter_words_list:
+        if word[0] in unguessed_letters_list:
+            current_score += 1
+        if word[1] in unguessed_letters_list:
+            current_score += 1
+        if word[2] in unguessed_letters_list:
+            current_score += 1
+        if word[3] in unguessed_letters_list:
+            current_score += 1
+        if word[4] in unguessed_letters_list:
+            current_score += 1
+        if current_score > best_word[1]:
+            best_word.clear()
+            best_word.append(word)
+            best_word.append(current_score)
+        current_score = 0
+
+    # Extract the best word from the sorting algorithm
+    if best_word[1] > 0:
+        print(best_word[1])
+        best_word = best_word[0]
+    else:
+        print("No more unused characters, random word from possible words chosen.")
+        if len(five_letter_words_list) == 0:
+            print("Sorry there are no possible word combinations with the data you entered")
+            quit()
+        else:
+            best_word = rand.choice(five_letter_words_list)
+
+    # Split up the best word into 5 variables, each containing one of its characters
+    best_word_char_1 = best_word[0]
+    if best_word_char_1 in unguessed_letters_list:
+        unguessed_letters_list.remove(best_word_char_1)
+    best_word_char_2 = best_word[1]
+    if best_word_char_2 in unguessed_letters_list:
+        unguessed_letters_list.remove(best_word_char_2)
+    best_word_char_3 = best_word[2]
+    if best_word_char_3 in unguessed_letters_list:
+        unguessed_letters_list.remove(best_word_char_3)
+    best_word_char_4 = best_word[3]
+    if best_word_char_4 in unguessed_letters_list:
+        unguessed_letters_list.remove(best_word_char_4)
+    best_word_char_5 = best_word[4]
+    if best_word_char_5 in unguessed_letters_list:
+        unguessed_letters_list.remove(best_word_char_5)
+
+
 #####-Processing-#####
 # Remove eliminated words from the possible words list after the first 2 guesses using preset words
 remove_first_guess_words()
@@ -328,3 +385,5 @@ print(len(five_letter_words_list))
 remove_third_guess_words()
 print(len(five_letter_words_list))
 print(five_letter_words_list)
+grab_fourth_word()
+print(best_word_char_1,best_word_char_2,best_word_char_3,best_word_char_4,best_word_char_5)
