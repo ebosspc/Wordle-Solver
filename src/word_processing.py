@@ -63,65 +63,95 @@ def process_first_word_data():
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_1_char_1_data == 'g':
-        possible_char_1_list.remove('a')
-        possible_char_2_list.remove('a')
-        possible_char_3_list.remove('a')
-        possible_char_4_list.remove('a')
-        possible_char_5_list.remove('a')
+        if 'a' in possible_char_1_list:
+            possible_char_1_list.remove('a')
+        if 'a' in possible_char_2_list:
+            possible_char_2_list.remove('a')
+        if 'a' in possible_char_3_list:
+            possible_char_3_list.remove('a')
+        if 'a' in possible_char_4_list:
+            possible_char_4_list.remove('a')
+        if 'a' in possible_char_5_list:
+            possible_char_5_list.remove('a')
     if word_1_char_1_data == 'y':
-        possible_char_1_list.remove('a')
+        if 'a' in possible_char_1_list:
+            possible_char_1_list.remove('a')
     if word_1_char_1_data == 'gr':
         possible_char_1_list.clear()
         possible_char_1_list.append('a')
     
     # Eliminate letter possibilites based on the user's inputted data
     if word_1_char_2_data == 'g':
-        possible_char_1_list.remove('d')
-        possible_char_2_list.remove('d')
-        possible_char_3_list.remove('d')
-        possible_char_4_list.remove('d')
-        possible_char_5_list.remove('d')
+        if 'd' in possible_char_1_list:
+            possible_char_1_list.remove('d')
+        if 'd' in possible_char_2_list:
+            possible_char_2_list.remove('d')
+        if 'd' in possible_char_3_list:
+            possible_char_3_list.remove('d')
+        if 'd' in possible_char_4_list:
+            possible_char_4_list.remove('d')
+        if 'd' in possible_char_5_list:
+            possible_char_5_list.remove('d')
     if word_1_char_2_data == 'y':
-        possible_char_2_list.remove('d')
+        if 'd' in possible_char_2_list:
+            possible_char_2_list.remove('d')
     if word_1_char_2_data == 'gr':
         possible_char_2_list.clear()
         possible_char_2_list.append('d')
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_1_char_3_data == 'g':
-        possible_char_1_list.remove('i')
-        possible_char_2_list.remove('i')
-        possible_char_3_list.remove('i')
-        possible_char_4_list.remove('i')
-        possible_char_5_list.remove('i')
+        if 'i' in possible_char_1_list:
+            possible_char_1_list.remove('i')
+        if 'i' in possible_char_2_list:
+            possible_char_2_list.remove('i')
+        if 'i' in possible_char_3_list:
+            possible_char_3_list.remove('i')
+        if 'i' in possible_char_4_list:
+            possible_char_4_list.remove('i')
+        if 'i' in possible_char_5_list:
+            possible_char_5_list.remove('i')
     if word_1_char_3_data == 'y':
-        possible_char_3_list.remove('i')
+        if 'i' in possible_char_3_list:
+            possible_char_3_list.remove('i')
     if word_1_char_3_data == 'gr':
         possible_char_3_list.clear()
         possible_char_3_list.append('i')
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_1_char_4_data == 'g':
-        possible_char_1_list.remove('e')
-        possible_char_2_list.remove('e')
-        possible_char_3_list.remove('e')
-        possible_char_4_list.remove('e')
-        possible_char_5_list.remove('e')
+        if 'e' in possible_char_1_list:
+            possible_char_1_list.remove('e')
+        if 'e' in possible_char_2_list:
+            possible_char_2_list.remove('e')
+        if 'e' in possible_char_3_list:
+            possible_char_3_list.remove('e')
+        if 'e' in possible_char_4_list:
+            possible_char_4_list.remove('e')
+        if 'e' in possible_char_5_list:
+            possible_char_5_list.remove('e')
     if word_1_char_4_data == 'y':
-        possible_char_4_list.remove('e')
+        if 'e' in possible_char_4_list:
+            possible_char_4_list.remove('e')
     if word_1_char_4_data == 'gr':
         possible_char_4_list.clear()
         possible_char_4_list.append('e')
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_1_char_5_data == 'g':
-        possible_char_1_list.remove('u')
-        possible_char_2_list.remove('u')
-        possible_char_3_list.remove('u')
-        possible_char_4_list.remove('u')
-        possible_char_5_list.remove('u')
+        if 'u' in possible_char_1_list:
+            possible_char_1_list.remove('u')
+        if 'u' in possible_char_2_list:
+            possible_char_2_list.remove('u')
+        if 'u' in possible_char_3_list:
+            possible_char_3_list.remove('u')
+        if 'u' in possible_char_4_list:
+            possible_char_4_list.remove('u')
+        if 'u' in possible_char_5_list:
+            possible_char_5_list.remove('u')
     if word_1_char_5_data == 'y':
-        possible_char_5_list.remove('u')
+        if 'u' in possible_char_5_list:
+            possible_char_5_list.remove('u')
     if word_1_char_5_data == 'gr':
         possible_char_5_list.clear()
         possible_char_5_list.append('u')
