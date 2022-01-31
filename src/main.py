@@ -25,12 +25,13 @@ def remove_first_guess_words():
     # Get the first word's data and import it into this module
     word_processing.get_first_word_data()
     word_processing.process_first_word_data()
-    global five_letter_words_list, possible_char_1_list, possible_char_2_list, possible_char_3_list, possible_char_4_list, possible_char_5_list
+    global five_letter_words_list,known_letters_list,possible_char_1_list,possible_char_2_list,possible_char_3_list,possible_char_4_list,possible_char_5_list
     from word_processing import possible_char_1_list
     from word_processing import possible_char_2_list
     from word_processing import possible_char_3_list
     from word_processing import possible_char_4_list
     from word_processing import possible_char_5_list
+    from word_processing import known_letters_list
 
     # Remove eliminated words from the possible words list
     for word in five_letter_words_list:
@@ -55,12 +56,13 @@ def remove_second_guess_words():
     # Get the second word's data and import it into this module
     word_processing.get_second_word_data()
     word_processing.process_second_word_data()
-    global five_letter_words_list
+    global five_letter_words_list, known_letters_list
     from word_processing import possible_char_1_list
     from word_processing import possible_char_2_list
     from word_processing import possible_char_3_list
     from word_processing import possible_char_4_list
     from word_processing import possible_char_5_list
+    from word_processing import known_letters_list 
     # Remove eliminated words from the possible words list
     for word in five_letter_words_list:
         if word[0] not in possible_char_1_list:
@@ -530,10 +532,10 @@ print(len(five_letter_words_list))
 # Remove eliminated words from the possible words list after the third guesses using an algorithmicly chosen word
 remove_third_guess_words()
 print(len(five_letter_words_list))
-print(five_letter_words_list)
 
 # Remove elimiated words from the possibel words list after the fourth guess using an algorithmically chosen word
 remove_fourth_guess_words()
 print(len(five_letter_words_list))
 print(five_letter_words_list)
 
+print(known_letters_list)
