@@ -85,6 +85,8 @@ def process_first_word_data():
     if word_1_char_1_data == 'gr':
         possible_char_1_list.clear()
         possible_char_1_list.append('a')
+        if 'a' not in known_letters_list:
+            known_letters_list.append('a')
     
     # Eliminate letter possibilites based on the user's inputted data
     if word_1_char_2_data == 'g':
@@ -106,6 +108,8 @@ def process_first_word_data():
     if word_1_char_2_data == 'gr':
         possible_char_2_list.clear()
         possible_char_2_list.append('d')
+        if 'd' not in known_letters_list:
+            known_letters_list.append('d')
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_1_char_3_data == 'g':
@@ -127,6 +131,8 @@ def process_first_word_data():
     if word_1_char_3_data == 'gr':
         possible_char_3_list.clear()
         possible_char_3_list.append('i')
+        if 'i' not in known_letters_list:
+            known_letters_list.append('i')
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_1_char_4_data == 'g':
@@ -148,6 +154,8 @@ def process_first_word_data():
     if word_1_char_4_data == 'gr':
         possible_char_4_list.clear()
         possible_char_4_list.append('e')
+        if 'e' not in known_letters_list:
+            known_letters_list.append('e')
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_1_char_5_data == 'g':
@@ -169,6 +177,8 @@ def process_first_word_data():
     if word_1_char_5_data == 'gr':
         possible_char_5_list.clear()
         possible_char_5_list.append('u')
+        if 'u' not in known_letters_list:
+            known_letters_list.append('u')
 
 
 # Define a function to collect the corresponding data for the first word entered
@@ -239,9 +249,13 @@ def process_second_word_data():
     if word_2_char_1_data == 'y':
         if 'c' in possible_char_1_list:
             possible_char_1_list.remove('c')
+        if 'c' not in known_letters_list:
+            known_letters_list.append('c')
     if word_2_char_1_data == 'gr':
         possible_char_1_list.clear()
         possible_char_1_list.append('c')
+        if 'c' not in known_letters_list:
+            known_letters_list.append('c')
     
     # Eliminate letter possibilites based on the user's inputted data
     if word_2_char_2_data == 'g':
@@ -258,9 +272,13 @@ def process_second_word_data():
     if word_2_char_2_data == 'y':
         if 'l' in possible_char_2_list:
             possible_char_2_list.remove('l')
+        if 'l' not in known_letters_list:
+            known_letters_list.append('l')
     if word_2_char_2_data == 'gr':
         possible_char_2_list.clear()
         possible_char_2_list.append('l')
+        if 'l' not in known_letters_list:
+            known_letters_list.append('l')
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_2_char_3_data == 'g':
@@ -277,9 +295,13 @@ def process_second_word_data():
     if word_2_char_3_data == 'y':
         if 'o' in possible_char_3_list:
             possible_char_3_list.remove('o')
+        if 'o' not in known_letters_list:
+            known_letters_list.append('o')
     if word_2_char_3_data == 'gr':
         possible_char_3_list.clear()
         possible_char_3_list.append('o')
+        if 'o' not in known_letters_list:
+            known_letters_list.append('o')
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_2_char_4_data == 'g':
@@ -296,9 +318,13 @@ def process_second_word_data():
     if word_2_char_4_data == 'y':
         if 'y' in possible_char_4_list:
             possible_char_4_list.remove('y')
+        if 'y' not in known_letters_list:
+            known_letters_list.append('y')
     if word_2_char_4_data == 'gr':
         possible_char_4_list.clear()
         possible_char_4_list.append('y')
+        if 'y' not in known_letters_list:
+            known_letters_list.append('y')
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_2_char_5_data == 'g':
@@ -315,6 +341,10 @@ def process_second_word_data():
     if word_2_char_5_data == 'y':
         if 's' in possible_char_5_list:
             possible_char_5_list.remove('s')
+        if 's' not in known_letters_list:
+            known_letters_list.append('s')
     if word_2_char_5_data == 'gr':
         possible_char_5_list.clear()
         possible_char_5_list.append('s')
+        if 's' not in known_letters_list:
+            known_letters_list.append('s')
