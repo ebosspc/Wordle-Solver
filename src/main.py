@@ -321,6 +321,8 @@ def remove_third_guess_words():
         possible_char_5_list.append(best_word_char_5)
         if best_word_char_5 not in known_letters_list:
             known_letters_list.append(best_word_char_5)
+    
+    # Remove words that no longer fit the possible character lists
     remove_unremoved_words()
 
 
