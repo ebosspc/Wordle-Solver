@@ -432,9 +432,13 @@ def remove_fourth_guess_words():
     if word_4_char_1_data == 'y':
         if best_word_char_1 in possible_char_1_list:
             possible_char_1_list.remove(best_word_char_1)
+        if best_word_char_1 not in known_letters_list:
+            known_letters_list.append(best_word_char_1)
     if word_4_char_1_data == 'gr':
         possible_char_1_list.clear()
         possible_char_1_list.append(best_word_char_1)
+        if best_word_char_1 not in known_letters_list:
+            known_letters_list.append(best_word_char_1)
     
     # Eliminate letter possibilites based on the user's inputted data
     if word_4_char_2_data == 'g':
@@ -451,9 +455,13 @@ def remove_fourth_guess_words():
     if word_4_char_2_data == 'y':
         if best_word_char_2 in possible_char_2_list:
             possible_char_2_list.remove(best_word_char_2)
+        if best_word_char_2 not in known_letters_list:
+            known_letters_list.append(best_word_char_2)
     if word_4_char_2_data == 'gr':
         possible_char_2_list.clear()
         possible_char_2_list.append(best_word_char_2)
+        if best_word_char_2 not in known_letters_list:
+            known_letters_list.append(best_word_char_2)
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_4_char_3_data == 'g':
@@ -470,9 +478,13 @@ def remove_fourth_guess_words():
     if word_4_char_3_data == 'y':
         if best_word_char_3 in possible_char_3_list:
             possible_char_3_list.remove(best_word_char_3)
+        if best_word_char_3 not in known_letters_list:
+            known_letters_list.append(best_word_char_3)
     if word_4_char_3_data == 'gr':
         possible_char_3_list.clear()
         possible_char_3_list.append(best_word_char_3)
+        if best_word_char_3 not in known_letters_list:
+            known_letters_list.append(best_word_char_3)
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_4_char_4_data == 'g':
@@ -489,9 +501,13 @@ def remove_fourth_guess_words():
     if word_4_char_4_data == best_word_char_4:
         if best_word_char_4 in possible_char_4_list:
             possible_char_4_list.remove(best_word_char_4)
+        if best_word_char_4 not in known_letters_list:
+            known_letters_list.append(best_word_char_4)
     if word_4_char_4_data == 'gr':
         possible_char_4_list.clear()
         possible_char_4_list.append(best_word_char_4)
+        if best_word_char_4 not in known_letters_list:
+            known_letters_list.append(best_word_char_4)
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_4_char_5_data == 'g':
@@ -508,9 +524,13 @@ def remove_fourth_guess_words():
     if word_4_char_5_data == 'y':
         if best_word_char_5 in possible_char_5_list:
             possible_char_5_list.remove(best_word_char_5)
+        if best_word_char_5 not in known_letters_list:
+            known_letters_list.append(best_word_char_5)
     if word_4_char_5_data == 'gr':
         possible_char_5_list.clear()
         possible_char_5_list.append(best_word_char_5)
+        if best_word_char_5 not in known_letters_list:
+            known_letters_list.append(best_word_char_5)
     
     # Remove impossible words
     remove_unremoved_words()
@@ -574,6 +594,138 @@ def grab_fifth_word():
 def remove_fifth_guess_words():
     grab_fifth_word()
 
+    # Globalize data variables that will be used in other modules
+    global word_5_char_1_data,word_5_char_2_data,word_5_char_3_data,word_5_char_4_data,word_5_char_5_data
+
+    # Tell the user what the first word they should enter into wordle
+    print("Enter the word", best_word_char_1+best_word_char_2+best_word_char_3+best_word_char_4+best_word_char_5, "as  your fourth guess.")
+    print("\nPlease enter the corresponding data for each letter below:")
+
+    # Get the resulting data of the first word's characters and don't let users enter bad inputs
+    while True:
+        word_5_char_1_data = str(input(best_word_char_1 + ": "))
+        if word_5_char_1_data == 'g' or word_5_char_1_data == 'y' or word_5_char_1_data == 'gr':
+            break
+    while True:
+        word_5_char_2_data = str(input(best_word_char_2 + ": "))
+        if word_5_char_2_data == 'g' or word_5_char_2_data == 'y' or word_5_char_2_data == 'gr':
+            break
+    while True:
+        word_5_char_3_data = str(input(best_word_char_3 + ": "))
+        if word_5_char_3_data == 'g' or word_5_char_3_data == 'y' or word_5_char_3_data == 'gr':
+            break
+    while True:
+        word_5_char_4_data = str(input(best_word_char_4 + ": "))
+        if word_5_char_4_data == 'g' or word_5_char_4_data == 'y' or word_5_char_4_data == 'gr':
+            break
+    while True:
+        word_5_char_5_data = str(input(best_word_char_5 + ": "))
+        if word_5_char_5_data == 'g' or word_5_char_5_data == 'y' or word_5_char_5_data == 'gr':
+            break
+    
+    # Output a mesage to the user that their data is being processed
+    print("processing...")
+    
+    # Create globalized lists that contain the possible letters a specific character in the word can be
+    global possible_char_1_list,possible_char_2_list,possible_char_3_list,possible_char_4_list,possible_char_5_list
+
+    # Eliminate letter possibilites based on the user's inputted data
+    if word_5_char_1_data == 'g':
+        if best_word_char_1 in possible_char_1_list:
+            possible_char_1_list.remove(best_word_char_1)
+        if best_word_char_1 in possible_char_2_list:
+            possible_char_2_list.remove(best_word_char_1)
+        if best_word_char_1 in possible_char_3_list:
+            possible_char_3_list.remove(best_word_char_1)
+        if best_word_char_1 in possible_char_4_list:
+            possible_char_4_list.remove(best_word_char_1)
+        if best_word_char_1 in possible_char_5_list:
+            possible_char_5_list.remove(best_word_char_1)
+    if word_5_char_1_data == 'y':
+        if best_word_char_1 in possible_char_1_list:
+            possible_char_1_list.remove(best_word_char_1)
+    if word_5_char_1_data == 'gr':
+        possible_char_1_list.clear()
+        possible_char_1_list.append(best_word_char_1)
+    
+    # Eliminate letter possibilites based on the user's inputted data
+    if word_5_char_2_data == 'g':
+        if best_word_char_2 in possible_char_1_list:
+            possible_char_1_list.remove(best_word_char_2)
+        if best_word_char_2 in possible_char_2_list:
+            possible_char_2_list.remove(best_word_char_2)
+        if best_word_char_2 in possible_char_3_list:
+            possible_char_3_list.remove(best_word_char_2)
+        if best_word_char_2 in possible_char_4_list:
+            possible_char_4_list.remove(best_word_char_2)
+        if best_word_char_2 in possible_char_5_list:
+            possible_char_5_list.remove(best_word_char_2)
+    if word_5_char_2_data == 'y':
+        if best_word_char_2 in possible_char_2_list:
+            possible_char_2_list.remove(best_word_char_2)
+    if word_5_char_2_data == 'gr':
+        possible_char_2_list.clear()
+        possible_char_2_list.append(best_word_char_2)
+
+    # Eliminate letter possibilites based on the user's inputted data
+    if word_5_char_3_data == 'g':
+        if best_word_char_3 in possible_char_1_list:
+            possible_char_1_list.remove(best_word_char_3)
+        if best_word_char_3 in possible_char_2_list:
+            possible_char_2_list.remove(best_word_char_3)
+        if best_word_char_3 in possible_char_3_list:
+            possible_char_3_list.remove(best_word_char_3)
+        if best_word_char_3 in possible_char_4_list:
+            possible_char_4_list.remove(best_word_char_3)
+        if best_word_char_3 in possible_char_5_list:
+            possible_char_5_list.remove(best_word_char_3)
+    if word_5_char_3_data == 'y':
+        if best_word_char_3 in possible_char_3_list:
+            possible_char_3_list.remove(best_word_char_3)
+    if word_5_char_3_data == 'gr':
+        possible_char_3_list.clear()
+        possible_char_3_list.append(best_word_char_3)
+
+    # Eliminate letter possibilites based on the user's inputted data
+    if word_5_char_4_data == 'g':
+        if best_word_char_4 in possible_char_1_list:
+            possible_char_1_list.remove(best_word_char_4)
+        if best_word_char_4 in possible_char_2_list:
+            possible_char_2_list.remove(best_word_char_4)
+        if best_word_char_4 in possible_char_3_list:
+            possible_char_3_list.remove(best_word_char_4)
+        if best_word_char_4 in possible_char_4_list:
+            possible_char_4_list.remove(best_word_char_4)
+        if best_word_char_4 in possible_char_5_list:
+            possible_char_5_list.remove(best_word_char_4)
+    if word_5_char_4_data == best_word_char_4:
+        if best_word_char_4 in possible_char_4_list:
+            possible_char_4_list.remove(best_word_char_4)
+    if word_5_char_4_data == 'gr':
+        possible_char_4_list.clear()
+        possible_char_4_list.append(best_word_char_4)
+
+    # Eliminate letter possibilites based on the user's inputted data
+    if word_5_char_5_data == 'g':
+        if best_word_char_5 in possible_char_1_list:
+            possible_char_1_list.remove(best_word_char_5)
+        if best_word_char_5 in possible_char_2_list:
+            possible_char_2_list.remove(best_word_char_5)
+        if best_word_char_5 in possible_char_3_list:
+            possible_char_3_list.remove(best_word_char_5)
+        if best_word_char_5 in possible_char_4_list:
+            possible_char_4_list.remove(best_word_char_5)
+        if best_word_char_5 in possible_char_5_list:
+            possible_char_5_list.remove(best_word_char_5)
+    if word_5_char_5_data == 'y':
+        if best_word_char_5 in possible_char_5_list:
+            possible_char_5_list.remove(best_word_char_5)
+    if word_5_char_5_data == 'gr':
+        possible_char_5_list.clear()
+        possible_char_5_list.append(best_word_char_5)
+    
+    # Remove impossible words
+    remove_unremoved_words()
 
 #####-Processing-#####
 # Remove eliminated words from the possible words list after the first 2 guesses using preset words
