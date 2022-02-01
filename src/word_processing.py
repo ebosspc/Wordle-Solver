@@ -8,39 +8,26 @@ def get_first_word_data():
     print("\nPlease enter the corresponding data for each letter below:")
 
     # Get the resulting data of the first word's first character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+    while True:
         word_1_char_1_data = str(input("A: "))
         if word_1_char_1_data == 'g' or word_1_char_1_data == 'y' or word_1_char_1_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's second character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_1_char_2_data = str(input("D: "))
         if word_1_char_2_data == 'g' or word_1_char_2_data == 'y' or word_1_char_2_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's third character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_1_char_3_data = str(input("I: "))
         if word_1_char_3_data == 'g' or word_1_char_3_data == 'y' or word_1_char_3_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's fourth character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_1_char_4_data = str(input("E: "))
         if word_1_char_4_data == 'g' or word_1_char_4_data == 'y' or word_1_char_4_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's fifth character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_1_char_5_data = str(input("U: "))
         if word_1_char_5_data == 'g' or word_1_char_5_data == 'y' or word_1_char_5_data == 'gr':
-            continue_with_loop = 1
+            break
 
 
 # Define a function to process the first word data
@@ -191,39 +178,26 @@ def get_second_word_data():
     print("\nPlease enter the corresponding data for each letter below:")
 
     # Get the resulting data of the first word's first character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+    while True:
         word_2_char_1_data = str(input("C: "))
         if word_2_char_1_data == 'g' or word_2_char_1_data == 'y' or word_2_char_1_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's second character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_2_char_2_data = str(input("L: "))
         if word_2_char_2_data == 'g' or word_2_char_2_data == 'y' or word_2_char_2_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's third character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_2_char_3_data = str(input("O: "))
         if word_2_char_3_data == 'g' or word_2_char_3_data == 'y' or word_2_char_3_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's fourth character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_2_char_4_data = str(input("Y: "))
         if word_2_char_4_data == 'g' or word_2_char_4_data == 'y' or word_2_char_4_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's fifth character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_2_char_5_data = str(input("S: "))
         if word_2_char_5_data == 'g' or word_2_char_5_data == 'y' or word_2_char_5_data == 'gr':
-            continue_with_loop = 1
+            break
 
 
 # Define a function to process the second word data

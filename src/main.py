@@ -179,42 +179,28 @@ def remove_third_guess_words():
     print("\nPlease enter the corresponding data for each letter below:")
 
     # Get the resulting data of the first word's first character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+    while True:
         word_3_char_1_data = str(input(best_word_char_1 + ": "))
         if word_3_char_1_data == 'g' or word_3_char_1_data == 'y' or word_3_char_1_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's second character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_3_char_2_data = str(input(best_word_char_2 + ": "))
         if word_3_char_2_data == 'g' or word_3_char_2_data == 'y' or word_3_char_2_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's third character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_3_char_3_data = str(input(best_word_char_3 + ": "))
         if word_3_char_3_data == 'g' or word_3_char_3_data == 'y' or word_3_char_3_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's fourth character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_3_char_4_data = str(input(best_word_char_4 + ": "))
         if word_3_char_4_data == 'g' or word_3_char_4_data == 'y' or word_3_char_4_data == 'gr':
-            continue_with_loop = 1
-
-    # Get the resulting data of the first word's fifth character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+            break
+    while True:
         word_3_char_5_data = str(input(best_word_char_5 + ": "))
         if word_3_char_5_data == 'g' or word_3_char_5_data == 'y' or word_3_char_5_data == 'gr':
-            continue_with_loop = 1
+            break
     
-
-        # Out put a mesage to the user that their data is being processed
+    # Out put a mesage to the user that their data is being processed
     print("processing...")
     
     # Create globalized lists that contain the possible letters a specific character in the word can be
@@ -420,13 +406,10 @@ def remove_fourth_guess_words():
         word_4_char_4_data = str(input(best_word_char_4 + ": "))
         if word_4_char_4_data == 'g' or word_4_char_4_data == 'y' or word_4_char_4_data == 'gr':
             break
-
-    # Get the resulting data of the first word's fifth character and don't let users enter bad inputs
-    continue_with_loop = 0
-    while continue_with_loop == 0:
+    while True:
         word_4_char_5_data = str(input(best_word_char_5 + ": "))
         if word_4_char_5_data == 'g' or word_4_char_5_data == 'y' or word_4_char_5_data == 'gr':
-            continue_with_loop = 1
+            break
     
     # Output a mesage to the user that their data is being processed
     print("processing...")
