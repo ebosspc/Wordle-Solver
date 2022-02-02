@@ -3,7 +3,7 @@ def generate_words_list():
     # Open the word database and a corresponding list to store words
     global master_words_list
     master_words_list = []
-    words_database_file = open("words_database.txt", 'r')
+    words_database_file = open("wordle_words.txt", 'r')
 
     # Add each word to the words list, broken up into a list of characters with the endline removed
     for line in words_database_file:

@@ -15,6 +15,7 @@ import word_processing as word_processing
 # Generate a list of all 5 letter words in English and import it
 word_list_generation.get_5_letter_words()
 from word_list_generation import five_letter_words_list
+original_five_letter_word_list = five_letter_words_list
 
 # Welcome the user to the script
 welcome.print_instructions()
@@ -81,11 +82,11 @@ def remove_second_guess_words():
             five_letter_words_list.remove(word)
     
     # Remove any words missed the first time
-    remove_unremoved_words()
+    remove_unremoved_words(guess_number=2)
 
 
 # Define a function to remove words that should have been removed but didn't
-def remove_unremoved_words():
+def remove_unremoved_words(guess_number):
     '''
     This function just does what is already done in other functions
     over and over again. Since the remove function can only remove one element at a time, 
@@ -108,6 +109,12 @@ def remove_unremoved_words():
         for word in five_letter_words_list:
             if word[4] not in possible_char_5_list:
                 five_letter_words_list.remove(word)
+        if guess_number > 3:
+            for i in range(len(five_letter_words_list)):
+                for letter in known_letters_list:
+                    for word in five_letter_words_list:
+                        if letter not in word:
+                            five_letter_words_list.remove(word)
 
 
 # Define a function to determine the best thrid word that the user shoudl guess
@@ -120,7 +127,7 @@ def grab_third_word():
     current_score = 0
 
     # Sort each word based on how many characters it has in that haven't been guess yet
-    for word in five_letter_words_list:
+    for word in original_five_letter_word_list:
         if word[0] in unguessed_letters_list:
             current_score += 1
         if word[1] in unguessed_letters_list:
@@ -323,7 +330,7 @@ def remove_third_guess_words():
             known_letters_list.append(best_word_char_5)
     
     # Remove words that no longer fit the possible character lists
-    remove_unremoved_words()
+    remove_unremoved_words(guess_number=3)
 
 
 # Define a function to determine the best fourth word that the user should guess
@@ -334,7 +341,7 @@ def grab_fourth_word():
     current_score = 0
 
     # Sort each word based on how many characters it has in that haven't been guess yet
-    for word in five_letter_words_list:
+    for word in original_five_letter_word_list:
         if word[0] in unguessed_letters_list:
             current_score += 1
         if word[1] in unguessed_letters_list:
@@ -535,7 +542,7 @@ def remove_fourth_guess_words():
             known_letters_list.append(best_word_char_5)
     
     # Remove impossible words
-    remove_unremoved_words()
+    remove_unremoved_words(guess_number=4)
 
 
 # Define a function to determine the best fifth word that the user should guess
@@ -546,7 +553,7 @@ def grab_fifth_word():
     current_score = 0
 
     # Sort each word based on how many characters it has in that haven't been guess yet
-    for word in five_letter_words_list:
+    for word in original_five_letter_word_list:
         if word[0] in unguessed_letters_list:
             current_score += 1
         if word[1] in unguessed_letters_list:
@@ -646,9 +653,13 @@ def remove_fifth_guess_words():
     if word_5_char_1_data == 'y':
         if best_word_char_1 in possible_char_1_list:
             possible_char_1_list.remove(best_word_char_1)
+        if best_word_char_1 not in known_letters_list:
+            known_letters_list.append(best_word_char_1)
     if word_5_char_1_data == 'gr':
         possible_char_1_list.clear()
         possible_char_1_list.append(best_word_char_1)
+        if best_word_char_1 not in known_letters_list:
+            known_letters_list.append(best_word_char_1)
     
     # Eliminate letter possibilites based on the user's inputted data
     if word_5_char_2_data == 'g':
@@ -665,9 +676,13 @@ def remove_fifth_guess_words():
     if word_5_char_2_data == 'y':
         if best_word_char_2 in possible_char_2_list:
             possible_char_2_list.remove(best_word_char_2)
+        if best_word_char_2 not in known_letters_list:
+            known_letters_list.append(best_word_char_2)
     if word_5_char_2_data == 'gr':
         possible_char_2_list.clear()
         possible_char_2_list.append(best_word_char_2)
+        if best_word_char_2 not in known_letters_list:
+            known_letters_list.append(best_word_char_2)
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_5_char_3_data == 'g':
@@ -684,9 +699,13 @@ def remove_fifth_guess_words():
     if word_5_char_3_data == 'y':
         if best_word_char_3 in possible_char_3_list:
             possible_char_3_list.remove(best_word_char_3)
+        if best_word_char_3 not in known_letters_list:
+            known_letters_list.append(best_word_char_3)
     if word_5_char_3_data == 'gr':
         possible_char_3_list.clear()
         possible_char_3_list.append(best_word_char_3)
+        if best_word_char_3 not in known_letters_list:
+            known_letters_list.append(best_word_char_3)
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_5_char_4_data == 'g':
@@ -703,9 +722,13 @@ def remove_fifth_guess_words():
     if word_5_char_4_data == best_word_char_4:
         if best_word_char_4 in possible_char_4_list:
             possible_char_4_list.remove(best_word_char_4)
+        if best_word_char_4 not in known_letters_list:
+            known_letters_list.append(best_word_char_4)
     if word_5_char_4_data == 'gr':
         possible_char_4_list.clear()
         possible_char_4_list.append(best_word_char_4)
+        if best_word_char_4 not in known_letters_list:
+            known_letters_list.append(best_word_char_4)
 
     # Eliminate letter possibilites based on the user's inputted data
     if word_5_char_5_data == 'g':
@@ -722,12 +745,16 @@ def remove_fifth_guess_words():
     if word_5_char_5_data == 'y':
         if best_word_char_5 in possible_char_5_list:
             possible_char_5_list.remove(best_word_char_5)
+        if best_word_char_5 not in known_letters_list:
+            known_letters_list.append(best_word_char_5)
     if word_5_char_5_data == 'gr':
         possible_char_5_list.clear()
         possible_char_5_list.append(best_word_char_5)
+        if best_word_char_5 not in known_letters_list:
+            known_letters_list.append(best_word_char_5)
     
     # Remove impossible words
-    remove_unremoved_words()
+    remove_unremoved_words(guess_number=5)
 
 #####-Processing-#####
 # Remove eliminated words from the possible words list after the first 2 guesses using preset words
@@ -745,4 +772,5 @@ remove_fourth_guess_words()
 print(len(five_letter_words_list))
 print(five_letter_words_list)
 
+remove_fifth_guess_words()
 print(known_letters_list)
