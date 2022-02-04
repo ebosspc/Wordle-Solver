@@ -1,15 +1,9 @@
 #####-Imports-#####
-# Import random library for random number generation
-import random as rand
-
-# Import module that generates the word list
-import word_list_generation as word_list_generation
-
-# Import a module to welcome the user
-import welcome as welcome
-
-# Import a moduel that processes word data
-import word_processing as word_processing
+# Import necessary lines and external modules
+import random as rand # Used for random number generation
+import word_list_generation as word_list_generation # Turn the words databases into lists of lists 
+import welcome as welcome # Module used to welcome the user to the program
+import word_processing as word_processing # Import a module used to process word data
 
 #####-Setup-#####
 # Generate a list of all 5 letter words in English and import it
