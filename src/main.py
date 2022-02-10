@@ -1,17 +1,9 @@
 #####-Imports-#####
-<<<<<<< HEAD
-import random as rand # Used for random number generation
-import word_list_generation as word_list_generation # Module that turns database data into manipulable lists
-import welcome as welcome # Module that controls the initial user interface
-import word_processing as word_processing # Module that controls word processing features
-
-=======
-# Import necessary lines and external modules
+# Import necessary libraries and modules
 import random as rand # Used for random number generation
 import word_list_generation as word_list_generation # Turn the words databases into lists of lists 
 import welcome as welcome # Module used to welcome the user to the program
 import word_processing as word_processing # Import a module used to process word data
->>>>>>> 69aa328c4c3d060a053b2dd68b41f62f8dab7eb7
 
 #####-Setup-#####
 # Welcome the user to the game and get their mode selection
