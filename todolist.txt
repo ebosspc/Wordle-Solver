@@ -5,3 +5,4 @@
 3. SImplify a lot of code
 
 4. Upgrade to an official wordle words list instead of trying to make my own
+

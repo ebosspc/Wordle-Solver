@@ -1,25 +1,28 @@
 #####-Imports-#####
-# Import random library for random number generation
-import random as rand
+import random as rand # Used for random number generation
+import word_list_generation as word_list_generation # Module that turns database data into manipulable lists
+import welcome as welcome # Module that controls the initial user interface
+import word_processing as word_processing # Module that controls word processing features
 
-# Import module that generates the word list
-import word_list_generation as word_list_generation
-
-# Import a module to welcome the user
-import welcome as welcome
-
-# Import a moduel that processes word data
-import word_processing as word_processing
 
 #####-Setup-#####
-# Generate a list of all 5 letter words in English and import it
-word_list_generation.get_5_letter_words()
-from word_list_generation import five_letter_words_list
-original_five_letter_word_list = five_letter_words_list
-
-# Welcome the user to the script
+# Welcome the user to the game and get their mode selection
 welcome.print_instructions()
+welcome.mode_selection()
+from welcome import mode_selection as mode_selection
 
+# Load in the proper data depending on which mode the user selected
+if mode_selection == 'manual':
+    print("Manual selected")
+if mode_selection == 'auto':
+    print("Auto selected")
+
+# Generate a list of all 5 letter words in English and import it
+#word_list_generation.get_5_letter_words()
+#from word_list_generation import five_letter_words_list
+#original_five_letter_word_list = five_letter_words_list
+
+'''
 #####-Functions-#####
 # Define a function to remove impossible words after the first guess
 def remove_first_guess_words():
@@ -87,11 +90,6 @@ def remove_second_guess_words():
 
 # Define a function to remove words that should have been removed but didn't
 def remove_unremoved_words(guess_number):
-    '''
-    This function just does what is already done in other functions
-    over and over again. Since the remove function can only remove one element at a time, 
-    and there can be multple similar elements, running this function ensures all elements that should be removed get removed
-    '''
     global five_letter_words_list
     for i in range(20):
         for word in five_letter_words_list:
@@ -774,3 +772,4 @@ print(five_letter_words_list)
 
 remove_fifth_guess_words()
 print(known_letters_list)
+'''
