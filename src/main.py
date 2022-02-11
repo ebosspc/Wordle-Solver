@@ -5,6 +5,7 @@ import word_list_generation as word_list_generation # Turn the words databases i
 import welcome as welcome # Module used to welcome the user to the program
 import word_processing as word_processing # Import a module used to process word data
 
+
 #####-Setup-#####
 # Welcome the user to the game and get their mode selection
 welcome.print_instructions()
