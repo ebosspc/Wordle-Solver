@@ -6,3 +6,4 @@
 
 4. Upgrade to an official wordle words list instead of trying to make my own
 
+5. Upgrade script to just use indexes in strings as characters instead of splitting a word into a list
