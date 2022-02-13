@@ -2,8 +2,6 @@
 
 2. Improve yellow word selection by removing words that don't have those yellow characters in them.
 
-3. SImplify a lot of code
+3. Simplify a lot of code
 
-4. Upgrade to an official wordle words list instead of trying to make my own
-
-5. Upgrade script to just use indexes in strings as characters instead of splitting a word into a list
+4. Upgrade script to just use indexes in strings as characters instead of splitting a word into a list
