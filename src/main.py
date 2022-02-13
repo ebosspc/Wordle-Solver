@@ -18,7 +18,6 @@ if mode_selection == 'manual':
 if mode_selection == 'auto':
     print("Auto selected")
 
-word_list_generation.get_wordle_inputs_5_letter_word_list()
 
 # Generate a list of all 5 letter words in English and import it
 #word_list_generation.get_5_letter_words()
