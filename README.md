@@ -1,5 +1,5 @@
 # Description
-A python script designed to aid people in solving the daily Wordle puzzle
+This script can be used to help you solve the daily Wordle puzzle. Whether you want to export some or all of the "thinking" to the algorithm , there is a mode for you.
 
 # Instructions
 1. While in alpha stages of development, this program must be run through an IDE (integrated development environment) via the main.py file found in the src folder. Due to python folder management intricacies, VSCode is reccomended and will work the best with this program.
