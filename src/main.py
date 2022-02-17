@@ -18,6 +18,10 @@ if mode_selection == 'manual':
 if mode_selection == 'auto':
     print("Auto selected")
 
+# Define a function that takes inputted data as parameter and returns the results
+def process_inputted_data():
+    print("processing...")
+
 
 # Generate a list of all 5 letter words in English and import it
 #word_list_generation.get_5_letter_words()
