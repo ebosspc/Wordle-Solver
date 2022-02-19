@@ -12,6 +12,15 @@ welcome.print_instructions()
 welcome.mode_selection()
 from welcome import mode_selection as mode_selection
 
+# Load lists for letter possibilites and unguessed letters
+word_list_generation.generate_deduction_lists()
+from word_list_generation import unguessed_letters_list
+from word_list_generation import possible_char_1_list
+from word_list_generation import possible_char_2_list
+from word_list_generation import possible_char_3_list
+from word_list_generation import possible_char_4_list
+from word_list_generation import possible_char_5_list
+
 # Load in the proper data depending on which mode the user selected
 if mode_selection == 'manual':
     print("Manual selected")

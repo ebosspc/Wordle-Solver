@@ -1,3 +1,22 @@
+# Define a function to generate lists with possible letters and unguessed letters
+def generate_deduction_lists():
+    # Create global lists with ungusessed letters and possibilites for each character
+    global unguessed_letters_list
+    global possible_char_1_list,possible_char_2_list,possible_char_3_list,possible_char_4_list,possible_char_5_list
+    unguessed_letters_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+                                'n','o','p','q','r','s','t','u','v','w','x','y','z']
+    possible_char_1_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+                            'n','o','p','q','r','s','t','u','v','w','x','y','z']
+    possible_char_2_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+                            'n','o','p','q','r','s','t','u','v','w','x','y','z']
+    possible_char_3_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+                            'n','o','p','q','r','s','t','u','v','w','x','y','z']
+    possible_char_4_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+                            'n','o','p','q','r','s','t','u','v','w','x','y','z']
+    possible_char_5_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+                            'n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+
 # Define a function to generate a list of 5 letter words using every word in the English language
 def get_5_letter_words_list_all_words():
     # Create a list to store 5 letter words
