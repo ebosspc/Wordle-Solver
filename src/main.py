@@ -1,3 +1,11 @@
+'''
+Credit to ____ for providing the txt file of all English words
+
+
+Credit to ____ for providing the txt file of all possible Wordle inputs
+
+'''
+
 # Import necessary libraries and modules
 import random as rand # Used for random number generation
 import word_list_generation as word_list_generation # Turn the words databases into lists of lists 
