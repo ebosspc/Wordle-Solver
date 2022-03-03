@@ -215,6 +215,9 @@ def process_first_word(first_word):
                 if letter not in word:
                     if word in five_letter_words_list:
                         five_letter_words_list.remove(word)
+    
+    # Select the next word to be guessed
+    select_next_guess(unguessed_letters_list, guess_number=2)
 
 
 def select_next_guess(unguessed_letters_list,guess_number):
@@ -254,9 +257,7 @@ def select_next_guess(unguessed_letters_list,guess_number):
             quit()
 
 
-
 process_first_word(first_word)
-select_next_guess(unguessed_letters_list,guess_number=2)
 print(five_letter_words_list)
 print(next_guess)
 
