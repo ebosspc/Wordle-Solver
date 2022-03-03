@@ -1,10 +1,10 @@
 # Define a function to generate lists with possible letters and unguessed letters
 def generate_deduction_lists():
     # Create global lists with ungusessed letters and possibilites for each character
-    global unguessed_letters_list
+    global unguessed_letters_list, known_letters_list
     global possible_char_1_list,possible_char_2_list,possible_char_3_list,possible_char_4_list,possible_char_5_list
     unguessed_letters_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
-                                'n','o','p','q','r','s','t','u','v','w','x','y','z']
+                            'n','o','p','q','r','s','t','u','v','w','x','y','z']
     possible_char_1_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
                             'n','o','p','q','r','s','t','u','v','w','x','y','z']
     possible_char_2_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
@@ -15,6 +15,7 @@ def generate_deduction_lists():
                             'n','o','p','q','r','s','t','u','v','w','x','y','z']
     possible_char_5_list = ['a','b','c','d','e','f','g','h','i','j','k','l','m',
                             'n','o','p','q','r','s','t','u','v','w','x','y','z']
+    known_letters_list = []
 
 
 # Define a function to generate a list of 5 letter words using every word in the English language
@@ -32,7 +33,7 @@ def get_5_letter_words_list_all_words():
 
 
 # Define a function to generate a list of 5 letter words using the database of possible word inputs to wordle
-def get_5_letter_word_list_all_inputs():
+def get_5_letter_words_list_all_inputs():
     # Create a list to store 5 letter words
     global five_letter_words_list_all_inputs
     five_letter_words_list_all_inputs = []
@@ -46,7 +47,7 @@ def get_5_letter_word_list_all_inputs():
 
 
 # Define a function to generate a list of 5 letter words using the database of all known answers to worlde puzzles
-def get_5_letter_word_list_all_answers():
+def get_5_letter_words_list_all_answers():
     # Define a function to generate a list of 5 letter words using the database of possible word inputs to wordle
     global five_letter_words_list_all_answers
     five_letter_words_list_all_answers = []
