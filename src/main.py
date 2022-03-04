@@ -40,7 +40,7 @@ if mode_selection == 'auto':
     first_word = highest_net_frequency_word
 
 
-# Define a function that takes inputted data as parameter and returns the results
+# Define a function that processes the first word
 def process_first_word(first_word):
     # Tell the user what the first word they should enter into wordle
     print("Enter the word " + first_word.upper() + " as the your first guess.")
@@ -220,6 +220,188 @@ def process_first_word(first_word):
     select_next_guess(unguessed_letters_list, guess_number=2)
 
 
+# Define a function that processes the second word
+def process_second_word(next_guess):
+    # Tell the user what the first word they should enter into wordle
+    print("Enter the word " + first_word.upper() + " as the your first guess.")
+    print("\nPlease enter the corresponding data for each letter below:")
+
+    # Assign variables for each of the characters in the first word and remove them from the unguessed letters list
+    global first_word_char_list,word_1_char_1,word_1_char_2,word_1_char_3,word_1_char_4,word_1_char_5
+    first_word_char_list = list(first_word)
+    word_1_char_1 = first_word_char_list[0]
+    word_1_char_2 = first_word_char_list[1]
+    word_1_char_3 = first_word_char_list[2]
+    word_1_char_4 = first_word_char_list[3]
+    word_1_char_5 = first_word_char_list[4]
+    unguessed_letters_list.remove(word_1_char_1)
+    unguessed_letters_list.remove(word_1_char_2)
+    unguessed_letters_list.remove(word_1_char_3)
+    unguessed_letters_list.remove(word_1_char_4)
+    unguessed_letters_list.remove(word_1_char_5)
+
+    # Get the resulting data of the first word's first character and don't let users enter bad inputs
+    while True:
+        word_1_char_1_data = str(input(word_1_char_1.upper() +": "))
+        if word_1_char_1_data == 'g' or word_1_char_1_data == 'y' or word_1_char_1_data == 'gr':
+            break
+    while True:
+        word_1_char_2_data = str(input(word_1_char_2.upper() + ": "))
+        if word_1_char_2_data == 'g' or word_1_char_2_data == 'y' or word_1_char_2_data == 'gr':
+            break
+    while True:
+        word_1_char_3_data = str(input(word_1_char_3.upper() + ": "))
+        if word_1_char_3_data == 'g' or word_1_char_3_data == 'y' or word_1_char_3_data == 'gr':
+            break
+    while True:
+        word_1_char_4_data = str(input(word_1_char_4.upper() + ": "))
+        if word_1_char_4_data == 'g' or word_1_char_4_data == 'y' or word_1_char_4_data == 'gr':
+            break
+    while True:
+        word_1_char_5_data = str(input(word_1_char_5.upper() + ": "))
+        if word_1_char_5_data == 'g' or word_1_char_5_data == 'y' or word_1_char_5_data == 'gr':
+            break
+    print("processing...")
+
+    # Eliminate letter possibilites based on the user's inputted data
+    if word_1_char_1_data == 'g':
+        if word_1_char_1 in possible_char_1_list:
+            possible_char_1_list.remove(word_1_char_1)
+        if word_1_char_1 in possible_char_2_list:
+            possible_char_2_list.remove(word_1_char_1)
+        if word_1_char_1 in possible_char_3_list:
+            possible_char_3_list.remove(word_1_char_1)
+        if word_1_char_1 in possible_char_4_list:
+            possible_char_4_list.remove(word_1_char_1)
+        if word_1_char_1 in possible_char_5_list:
+            possible_char_5_list.remove(word_1_char_1)
+    if word_1_char_1_data == 'y':
+        if word_1_char_1 in possible_char_1_list:
+            possible_char_1_list.remove(word_1_char_1)
+        if word_1_char_1 not in known_letters_list:
+            known_letters_list.append(word_1_char_1)
+    if word_1_char_1_data == 'gr':
+        possible_char_1_list.clear()
+        possible_char_1_list.append(word_1_char_1)
+        if word_1_char_1 not in known_letters_list:
+            known_letters_list.append(word_1_char_1)
+    if word_1_char_2_data == 'g':
+        if word_1_char_2 in possible_char_1_list:
+            possible_char_1_list.remove(word_1_char_2)
+        if word_1_char_2 in possible_char_2_list:
+            possible_char_2_list.remove(word_1_char_2)
+        if word_1_char_2 in possible_char_3_list:
+            possible_char_3_list.remove(word_1_char_2)
+        if word_1_char_2 in possible_char_4_list:
+            possible_char_4_list.remove(word_1_char_2)
+        if word_1_char_2 in possible_char_5_list:
+            possible_char_5_list.remove(word_1_char_2)
+    if word_1_char_2_data == 'y':
+        if word_1_char_2 in possible_char_2_list:
+            possible_char_2_list.remove(word_1_char_2)
+        if word_1_char_2 not in known_letters_list:
+            known_letters_list.append(word_1_char_2)
+    if word_1_char_2_data == 'gr':
+        possible_char_2_list.clear()
+        possible_char_2_list.append(word_1_char_2)
+        if word_1_char_2 not in known_letters_list:
+            known_letters_list.append(word_1_char_2)
+    if word_1_char_3_data == 'g':
+        if word_1_char_3 in possible_char_1_list:
+            possible_char_1_list.remove(word_1_char_3)
+        if word_1_char_3 in possible_char_2_list:
+            possible_char_2_list.remove(word_1_char_3)
+        if word_1_char_3 in possible_char_3_list:
+            possible_char_3_list.remove(word_1_char_3)
+        if word_1_char_3 in possible_char_4_list:
+            possible_char_4_list.remove(word_1_char_3)
+        if word_1_char_3 in possible_char_5_list:
+            possible_char_5_list.remove(word_1_char_3)
+    if word_1_char_3_data == 'y':
+        if word_1_char_3 in possible_char_3_list:
+            possible_char_3_list.remove(word_1_char_3)
+        if word_1_char_3 not in known_letters_list:
+            known_letters_list.append(word_1_char_3)
+    if word_1_char_3_data == 'gr':
+        possible_char_3_list.clear()
+        possible_char_3_list.append(word_1_char_3)
+        if word_1_char_3 not in known_letters_list:
+            known_letters_list.append(word_1_char_3)
+    if word_1_char_4_data == 'g':
+        if word_1_char_4 in possible_char_1_list:
+            possible_char_1_list.remove(word_1_char_4)
+        if word_1_char_4 in possible_char_2_list:
+            possible_char_2_list.remove(word_1_char_4)
+        if word_1_char_4 in possible_char_3_list:
+            possible_char_3_list.remove(word_1_char_4)
+        if word_1_char_4 in possible_char_4_list:
+            possible_char_4_list.remove(word_1_char_4)
+        if word_1_char_4 in possible_char_5_list:
+            possible_char_5_list.remove(word_1_char_4)
+    if word_1_char_4_data == 'y':
+        if word_1_char_4 in possible_char_4_list:
+            possible_char_4_list.remove(word_1_char_4)
+        if word_1_char_4 not in known_letters_list:
+            known_letters_list.append(word_1_char_4)
+    if word_1_char_4_data == 'gr':
+        possible_char_4_list.clear()
+        possible_char_4_list.append(word_1_char_4)
+        if word_1_char_4 not in known_letters_list:
+            known_letters_list.append(word_1_char_4)
+    if word_1_char_5_data == 'g':
+        if word_1_char_5 in possible_char_1_list:
+            possible_char_1_list.remove(word_1_char_5)
+        if word_1_char_5 in possible_char_2_list:
+            possible_char_2_list.remove(word_1_char_5)
+        if word_1_char_5 in possible_char_3_list:
+            possible_char_3_list.remove(word_1_char_5)
+        if word_1_char_5 in possible_char_4_list:
+            possible_char_4_list.remove(word_1_char_5)
+        if word_1_char_5 in possible_char_5_list:
+            possible_char_5_list.remove(word_1_char_5)
+    if word_1_char_5_data == 'y':
+        if word_1_char_5 in possible_char_5_list:
+            possible_char_5_list.remove(word_1_char_5)
+        if word_1_char_5 not in known_letters_list:
+            known_letters_list.append(word_1_char_5)
+    if word_1_char_5_data == 'gr':
+        possible_char_5_list.clear()
+        possible_char_5_list.append(word_1_char_5)
+        if word_1_char_5 not in known_letters_list:
+            known_letters_list.append(word_1_char_5)
+
+    # Remove words from possibilites based on the user's inputted data
+    for i in range(20):
+        # Remove words with known impossible letters in a specific location
+        for word in five_letter_words_list:
+            if word[0] not in possible_char_1_list:
+                five_letter_words_list.remove(word)
+        for word in five_letter_words_list:
+            if word[1] not in possible_char_2_list:
+                five_letter_words_list.remove(word)
+        for word in five_letter_words_list:
+            if word[2] not in possible_char_3_list:
+                five_letter_words_list.remove(word)
+        for word in five_letter_words_list:
+            if word[3] not in possible_char_4_list:
+                five_letter_words_list.remove(word)
+        for word in five_letter_words_list:
+            if word[4] not in possible_char_5_list:
+                five_letter_words_list.remove(word)
+
+        # Remove words without letters that are known to be in the word
+        for word in five_letter_words_list:
+            for letter in known_letters_list:
+                if letter not in word:
+                    if word in five_letter_words_list:
+                        five_letter_words_list.remove(word)
+    
+    # Select the next word to be guessed
+    select_next_guess(unguessed_letters_list, guess_number=3)
+
+
+
+
 def select_next_guess(unguessed_letters_list,guess_number):
     global next_guess
     if guess_number == 1:
@@ -240,7 +422,7 @@ def select_next_guess(unguessed_letters_list,guess_number):
             current_score += 1
         if word[4] in unguessed_letters_list:
             current_score += 1
-        current_score = current_score -(len(list(word))-len(set(word)))
+        current_score = current_score -(len(list(word))-len(set(word))) # Subtracts the number of repeated letters
         if current_score > best_word[1]:
             best_word.clear()
             best_word.append(word)
@@ -257,9 +439,20 @@ def select_next_guess(unguessed_letters_list,guess_number):
             quit()
 
 
+
+
+
+
+
+
+
 process_first_word(first_word)
 print(five_letter_words_list)
 print(next_guess)
+
+
+
+
 
 
 
