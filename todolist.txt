@@ -1,7 +1,0 @@
-1. Add confirmation a word exists in the unlikely event the aglorith sleects a word that is not recognized by wordle
-
-2. Improve yellow word selection by removing words that don't have those yellow characters in them.
-
-3. Simplify a lot of code
-
-4. Upgrade script to just use indexes in strings as characters instead of splitting a word into a list
