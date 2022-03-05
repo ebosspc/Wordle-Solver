@@ -1,9 +1,6 @@
 '''
 Credit to dwyl for providing the database of all English words
 https://github.com/dwyl/english-words
-
-Credit to tabatkins for providing the txt file of all possible Wordle inputs
-https://github.com/tabatkins/wordle-list
 '''
 
 # Import necessary libraries and modules
