@@ -419,32 +419,29 @@ def select_next_guess(guess_number):
         if len(possible_char_1_list) == 1:
             if word[0] in possible_char_1_list:
                 current_score -= 0.5
-        
         if word[1] in unguessed_letters_list:
             current_score += 1
         if len(possible_char_2_list) == 1:
             if word[1] in possible_char_2_list:
                 current_score -= 0.5
-        
         if word[2] in unguessed_letters_list:
             current_score += 1
         if len(possible_char_3_list) == 1:
             if word[2] in possible_char_3_list:
                 current_score -= 0.5
-        
         if word[3] in unguessed_letters_list:
             current_score += 1
         if len(possible_char_4_list) == 1:
             if word[3] in possible_char_4_list:
                 current_score -= 0.5
-        
         if word[4] in unguessed_letters_list:
             current_score += 1
         if len(possible_char_5_list) == 1:
             if word[4] in possible_char_5_list:
                 current_score -= 0.5
-            
         current_score = current_score -(len(list(word))-len(set(word))) # Subtracts the number of repeated letters
+
+        # Updates the best word tracker
         if current_score >= best_word[1]:
             best_word.clear()
             best_word.append(word)
