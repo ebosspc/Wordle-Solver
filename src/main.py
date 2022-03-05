@@ -7,7 +7,6 @@ https://github.com/dwyl/english-words
 import random as rand # Used for random number generation
 import word_list_generation as word_list_generation # Turn the words databases into lists of lists 
 import welcome as welcome # Module used to welcome the user to the program
-import word_processing as word_processing # Import a module used to process word data
 import frequency_analysis as fqan # Import a module used for frequency analysis
 
 # Welcome the user to the game,get their mode selection, and run the necessary setup functions
