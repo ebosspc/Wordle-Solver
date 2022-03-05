@@ -17,12 +17,12 @@ import frequency_analysis as fqan # Import a module used for frequency analysis
 welcome.print_instructions()
 welcome.mode_selection()
 word_list_generation.generate_deduction_lists()
-word_list_generation.get_5_letter_words_list_all_words()
+word_list_generation.get_5_letter_words_list_all_inputs()
 fqan.generate_highest_net_frequency_word()
 from welcome import mode_selection as mode_selection
 from word_list_generation import unguessed_letters_list
 from word_list_generation import known_letters_list
-from word_list_generation import five_letter_words_list_all_words
+from word_list_generation import five_letter_words_list_all_inputs
 from word_list_generation import possible_char_1_list
 from word_list_generation import possible_char_2_list
 from word_list_generation import possible_char_3_list
@@ -31,14 +31,16 @@ from word_list_generation import possible_char_5_list
 from frequency_analysis import highest_net_frequency_word
 
 # Load in the proper data depending on which mode the user selected
-original_five_letter_words_list = five_letter_words_list_all_words
-five_letter_words_list = five_letter_words_list_all_words
+original_five_letter_words_list = []
+five_letter_words_list = []
+for word in five_letter_words_list_all_inputs:
+    original_five_letter_words_list.append(word)
+    five_letter_words_list.append(word)
 if mode_selection == 'manual':
     print("Manual selected")
 if mode_selection == 'auto':
     print("Auto selected")
     first_word = highest_net_frequency_word
-
 
 # Define a function that processes the first word
 def process_first_word(first_word):
@@ -191,7 +193,7 @@ def process_first_word(first_word):
             known_letters_list.append(word_1_char_5)
 
     # Remove words from possibilites based on the user's inputted data
-    for i in range(20):
+    for i in range(20): # Repeat the algorithm several times because the remove function can only remove one word at a time
         # Remove words with known impossible letters in a specific location
         for word in five_letter_words_list:
             if word[0] not in possible_char_1_list:
@@ -215,9 +217,9 @@ def process_first_word(first_word):
                 if letter not in word:
                     if word in five_letter_words_list:
                         five_letter_words_list.remove(word)
-    
+
     # Select the next word to be guessed
-    select_next_guess(unguessed_letters_list, guess_number=2)
+    select_next_guess(guess_number=2)
 
 
 # Define a function that processes the second word
@@ -397,12 +399,12 @@ def process_second_word(next_guess):
                         five_letter_words_list.remove(word)
     
     # Select the next word to be guessed
-    select_next_guess(unguessed_letters_list, guess_number=3)
+    select_next_guess(unguessed_letters_list,guess_number=3)
 
 
 
-
-def select_next_guess(unguessed_letters_list,guess_number):
+# Define a function that runs an algorithm to select the next best possible guess
+def select_next_guess(guess_number):
     global next_guess
     if guess_number == 1:
         ...
@@ -414,16 +416,36 @@ def select_next_guess(unguessed_letters_list,guess_number):
     for word in original_five_letter_words_list:
         if word[0] in unguessed_letters_list:
             current_score += 1
+        if len(possible_char_1_list) == 1:
+            if word[0] in possible_char_1_list:
+                current_score -= 0.5
+        
         if word[1] in unguessed_letters_list:
             current_score += 1
+        if len(possible_char_2_list) == 1:
+            if word[1] in possible_char_2_list:
+                current_score -= 0.5
+        
         if word[2] in unguessed_letters_list:
             current_score += 1
+        if len(possible_char_3_list) == 1:
+            if word[2] in possible_char_3_list:
+                current_score -= 0.5
+        
         if word[3] in unguessed_letters_list:
             current_score += 1
+        if len(possible_char_4_list) == 1:
+            if word[3] in possible_char_4_list:
+                current_score -= 0.5
+        
         if word[4] in unguessed_letters_list:
             current_score += 1
+        if len(possible_char_5_list) == 1:
+            if word[4] in possible_char_5_list:
+                current_score -= 0.5
+            
         current_score = current_score -(len(list(word))-len(set(word))) # Subtracts the number of repeated letters
-        if current_score > best_word[1]:
+        if current_score >= best_word[1]:
             best_word.clear()
             best_word.append(word)
             best_word.append(current_score)
@@ -448,7 +470,6 @@ def select_next_guess(unguessed_letters_list,guess_number):
 
 process_first_word(first_word)
 print(five_letter_words_list)
-print(next_guess)
 
 
 
