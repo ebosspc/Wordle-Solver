@@ -32,11 +32,6 @@ five_letter_words_list = []
 for word in five_letter_words_list_all_inputs:
     original_five_letter_words_list.append(word)
     five_letter_words_list.append(word)
-if mode_selection == 'manual':
-    print("Manual selected")
-if mode_selection == 'auto':
-    print("Auto selected")
-    first_word = highest_net_frequency_word
 
 # Define a function that processes the first word
 def process_first_word(first_word):
@@ -220,7 +215,7 @@ def process_first_word(first_word):
                         five_letter_words_list.remove(word)
 
     # Select the next word to be guessed
-    select_next_guess(guess_number=2)
+    select_next_guess(mode_selection)
 
 
 # Define a function that processes the second word
@@ -405,13 +400,13 @@ def process_second_word(next_guess):
                         five_letter_words_list.remove(word)
     
     # Select the next word to be guessed
-    select_next_guess(guess_number=3)
+    select_next_guess(mode_selection)
 
 
 # Define a function that processes the third word
 def process_third_word(next_guess):
     # Tell the user what the first word they should enter into wordle
-    print("Enter the word " + next_guess.upper() + " as the your second guess.")
+    print("Enter the word " + next_guess.upper() + " as the your third guess.")
     print("\nPlease enter the corresponding data for each letter below:")
 
     # Assign variables for each of the characters in the first word and remove them from the unguessed letters list
@@ -590,13 +585,13 @@ def process_third_word(next_guess):
                         five_letter_words_list.remove(word)
     
     # Select the next word to be guessed
-    select_next_guess(guess_number=4)
+    select_next_guess(mode_selection)
 
 
 # Define a function that process's the fourth word
 def process_fourth_word(next_guess):
     # Tell the user what the first word they should enter into wordle
-    print("Enter the word " + next_guess.upper() + " as the your second guess.")
+    print("Enter the word " + next_guess.upper() + " as the your fourth guess.")
     print("\nPlease enter the corresponding data for each letter below:")
 
     # Assign variables for each of the characters in the first word and remove them from the unguessed letters list
@@ -775,13 +770,13 @@ def process_fourth_word(next_guess):
                         five_letter_words_list.remove(word)
     
     # Select the next word to be guessed
-    select_next_guess(guess_number=5)
+    select_next_guess(mode_selection)
 
 
 # Define  function that process's the fifth word
 def process_fifth_word(next_guess):
     # Tell the user what the first word they should enter into wordle
-    print("Enter the word " + next_guess.upper() + " as the your second guess.")
+    print("Enter the word " + next_guess.upper() + " as the your fifth guess.")
     print("\nPlease enter the corresponding data for each letter below:")
 
     # Assign variables for each of the characters in the first word and remove them from the unguessed letters list
@@ -960,80 +955,97 @@ def process_fifth_word(next_guess):
                         five_letter_words_list.remove(word)
     
     # Select the next word to be guessed
-    select_next_guess(guess_number=6)
+    select_next_guess(mode_selection)
 
 
 # Define a function that runs an algorithm to select the next best possible guess
-def select_next_guess(guess_number):
+def select_next_guess(mode_selection):
+    if len(five_letter_words_list) == 1:
+        print(five_letter_words_list)
+        quit()
     global next_guess
-    if guess_number == 1:
-        ...
-    # Define variables to track word sorting
-    best_word = ['',0]
-    current_score = 0
-
-    # Sort each word based on how many characters it has in that haven't been guess yet
-    for word in original_five_letter_words_list:
-        if word[0] in unguessed_letters_list:
-            current_score += 1
-        if len(possible_char_1_list) == 1:
-            if word[0] in possible_char_1_list:
-                current_score -= 0.5
-        if word[1] in unguessed_letters_list:
-            current_score += 1
-        if len(possible_char_2_list) == 1:
-            if word[1] in possible_char_2_list:
-                current_score -= 0.5
-        if word[2] in unguessed_letters_list:
-            current_score += 1
-        if len(possible_char_3_list) == 1:
-            if word[2] in possible_char_3_list:
-                current_score -= 0.5
-        if word[3] in unguessed_letters_list:
-            current_score += 1
-        if len(possible_char_4_list) == 1:
-            if word[3] in possible_char_4_list:
-                current_score -= 0.5
-        if word[4] in unguessed_letters_list:
-            current_score += 1
-        if len(possible_char_5_list) == 1:
-            if word[4] in possible_char_5_list:
-                current_score -= 0.5
-        current_score = current_score -(len(list(word))-len(set(word))) # Subtracts the number of repeated letters
-
-        # Updates the best word tracker
-        if current_score >= best_word[1]:
-            best_word.clear()
-            best_word.append(word)
-            best_word.append(current_score)
+    if mode_selection == 'manual':
+        while True:
+            next_guess = str(input("Please enter your word: "))
+            if next_guess.isalpha():
+                next_guess = next_guess.lower()
+                break
+                
+    if mode_selection == 'auto':
+        # Define variables to track word sorting
+        best_word = ['',0]
         current_score = 0
 
-    # Extract the best word from the sorting algorithm
-    if best_word[1] > 0:
-        next_guess = best_word[0]
-    else:
-        print("No more unused characters, random word from possible words chosen.")
-        if len(five_letter_words_list) == 0:
-            print("Sorry there are no possible word combinations with the data you entered")
-            quit()
+        # Sort each word based on how many characters it has in that haven't been guess yet
+        for word in original_five_letter_words_list:
+            if word[0] in unguessed_letters_list:
+                current_score += 1
+            if len(possible_char_1_list) == 1:
+                if word[0] in possible_char_1_list:
+                    current_score -= 0.5
+            if word[1] in unguessed_letters_list:
+                current_score += 1
+            if len(possible_char_2_list) == 1:
+                if word[1] in possible_char_2_list:
+                    current_score -= 0.5
+            if word[2] in unguessed_letters_list:
+                current_score += 1
+            if len(possible_char_3_list) == 1:
+                if word[2] in possible_char_3_list:
+                    current_score -= 0.5
+            if word[3] in unguessed_letters_list:
+                current_score += 1
+            if len(possible_char_4_list) == 1:
+                if word[3] in possible_char_4_list:
+                    current_score -= 0.5
+            if word[4] in unguessed_letters_list:
+                current_score += 1
+            if len(possible_char_5_list) == 1:
+                if word[4] in possible_char_5_list:
+                    current_score -= 0.5
+            current_score = current_score -(len(list(word))-len(set(word))) # Subtracts the number of repeated letters
+
+            # Updates the best word tracker
+            if current_score >= best_word[1]:
+                best_word.clear()
+                best_word.append(word)
+                best_word.append(current_score)
+            current_score = 0
+
+        # Extract the best word from the sorting algorithm
+        if best_word[1] > 0:
+            next_guess = best_word[0]
+        else:
+            print("No more unused characters, random word from possible words chosen.")
+            if len(five_letter_words_list) == 0:
+                print("Sorry there are no possible word combinations with the data you entered")
+                quit()
 
 
-process_first_word(first_word)
-if len(five_letter_words_list) == 1:
+# Manual exectution
+if mode_selection == 'manual':
+    print("Manual selected")
+    while True:
+        first_word = str(input("Please enter your word: "))
+        if first_word.isalpha():
+            first_word = first_word.lower()
+            break
+    process_first_word(first_word)
+    process_second_word(next_guess)
+    process_third_word(next_guess)
+    process_fourth_word(next_guess)
+    process_fifth_word(next_guess)
     print(five_letter_words_list)
     quit()
-process_second_word(next_guess)
-if len(five_letter_words_list) == 1:
+
+# Automatic execution
+if mode_selection == 'auto':
+    print("Auto selected")
+    first_word = highest_net_frequency_word # Grab the initial word after performing frequency analysis
+    process_first_word(first_word)
+    process_second_word(next_guess)
+    process_third_word(next_guess)
+    process_fourth_word(next_guess)
+    process_fifth_word(next_guess)
     print(five_letter_words_list)
     quit()
-process_third_word(next_guess)
-if len(five_letter_words_list) == 1:
-    print(five_letter_words_list)
-    quit()
-process_fourth_word(next_guess)
-if len(five_letter_words_list) == 1:
-    print(five_letter_words_list)
-    quit()
-process_fifth_word(next_guess)
-print(five_letter_words_list)
-quit()
