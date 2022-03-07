@@ -16,7 +16,6 @@ def print_instructions():
 # Define a function that selects the mode that the user wants to use in the algorithm
 def mode_selection():
     global mode_selection
-    mode_selection
     while True:
         mode_selection = str(input("Please select which mode you would like to use this algorithm in.\nType m for manual or a for automatic: "))
         if mode_selection == 'm' or mode_selection == 'a':
@@ -27,3 +26,18 @@ def mode_selection():
             break
         else:
             print("Sorry that was an invalid input. Please try again.")
+
+# Define a function that selects the game difficulty that the user wants to use
+def game_difficulty():
+    global game_difficulty
+    while True:
+        game_difficulty = str(input("Please select the difficulty you are playing on.\nType e for easy or h for hard: "))
+        if game_difficulty == 'e' or game_difficulty == 'h':
+            if game_difficulty == 'e':
+                game_difficulty = 'easy'
+            if game_difficulty == 'h':
+                game_difficulty = 'hard'
+            break
+        else:
+            print("Sorry that was an invalid input. Please try again.")
+    ...

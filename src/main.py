@@ -9,13 +9,15 @@ import word_list_generation as word_list_generation # Turn the words databases i
 import welcome as welcome # Module used to welcome the user to the program
 import frequency_analysis as fqan # Import a module used for frequency analysis
 
-# Welcome the user to the game,get their mode selection, and run the necessary setup functions
+# Welcome the user to the game,get their mode selection, difficulty, and run the necessary setup functions
 welcome.print_instructions()
 welcome.mode_selection()
+welcome.game_difficulty()
 word_list_generation.generate_deduction_lists()
 word_list_generation.get_5_letter_words_list_all_inputs()
 fqan.generate_highest_net_frequency_word()
 from welcome import mode_selection as mode_selection
+from welcome import game_difficulty as game_difficulty
 from word_list_generation import unguessed_letters_list
 from word_list_generation import known_letters_list
 from word_list_generation import five_letter_words_list_all_inputs
@@ -1022,30 +1024,47 @@ def select_next_guess(mode_selection):
                 quit()
 
 
+# Define a function to run the solver if the user selects manual execution
+def manual_execution(game_difficulty):
+    if game_difficulty == 'easy':
+        print("Manual selected")
+        while True:
+            first_word = str(input("Please enter your first word: "))
+            if first_word.isalpha():
+                first_word = first_word.lower()
+                break
+            else:
+                print("Sorry, that was an invalid input, please try again.")
+        process_first_word(first_word)
+        process_second_word(next_guess)
+        process_third_word(next_guess)
+        process_fourth_word(next_guess)
+        process_fifth_word(next_guess)
+        print(five_letter_words_list)
+        quit()
+    if game_difficulty == 'hard':
+        ...
+
+# Define a function to run if the user selects automatic execution
+def automatic_execution(game_difficulty):
+    if game_difficulty == 'easy':
+        print("Auto selected")
+        first_word = highest_net_frequency_word # Grab the initial word after performing frequency analysis
+        process_first_word(first_word)
+        process_second_word(next_guess)
+        process_third_word(next_guess)
+        process_fourth_word(next_guess)
+        process_fifth_word(next_guess)
+        print(five_letter_words_list)
+        quit()
+    if game_difficulty == 'hard':
+        ...
+
+
 # Manual exectution
 if mode_selection == 'manual':
-    print("Manual selected")
-    while True:
-        first_word = str(input("Please enter your word: "))
-        if first_word.isalpha():
-            first_word = first_word.lower()
-            break
-    process_first_word(first_word)
-    process_second_word(next_guess)
-    process_third_word(next_guess)
-    process_fourth_word(next_guess)
-    process_fifth_word(next_guess)
-    print(five_letter_words_list)
-    quit()
+    manual_execution(game_difficulty)
 
 # Automatic execution
 if mode_selection == 'auto':
-    print("Auto selected")
-    first_word = highest_net_frequency_word # Grab the initial word after performing frequency analysis
-    process_first_word(first_word)
-    process_second_word(next_guess)
-    process_third_word(next_guess)
-    process_fourth_word(next_guess)
-    process_fifth_word(next_guess)
-    print(five_letter_words_list)
-    quit()
+    automatic_execution(game_difficulty)
